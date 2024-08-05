@@ -9,7 +9,7 @@ on:
   # This command allows us to run the Action automatically from the Actions tab.
   workflow_dispatch:
   
-  # Also run on every push on the main branch
+  # Also run on every push on the master branch
   push:
     branches:
       - main
@@ -39,8 +39,7 @@ jobs:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake.gif?color_snake=orange&color_dots=#d4d7d6,#6e6e6e,#d2dae2,#9db2d4,#597ba5
-          args: --color_snake=orange --color_dots=light
+            dist/github-contribution-grid-snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
         env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
