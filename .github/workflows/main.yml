@@ -1,10 +1,9 @@
-# GitHub Action for generating a contribution graph with a snake eating your contributions.
 name: Generate Snake
 
 # Controls when the action will run.
 on:
   schedule:
-      # every 12 hours
+    # every 12 hours
     - cron: "0 */12 * * *"
 
   # This command allows us to run the Action automatically from the Actions tab.
@@ -13,7 +12,7 @@ on:
   # Also run on every push on the master branch
   push:
     branches:
-    - main
+      - main
 
 # The sequence of runs in this workflow:
 jobs:
@@ -21,6 +20,12 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    # Grant GITHUB_TOKEN the necessary permissions
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
